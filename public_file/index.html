@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>File Manger</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/fileManager.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="datagrid" id="file_datagrid"></div>
+	<div id="toolbar">
+		<img src="img/open.gif" alt="Download/open" id="btn_open" title="Download/open">
+		<img src="img/new.gif" alt="New" id="btn_new_folder" title="New">
+		<img src="img/upload.gif" alt="Upload" id="btn_upload" title="Upload">
+		<img src="img/rename.gif" alt="Rename" id="btn_rename" title="Rename">
+		<img src="img/delete.gif" alt="Delete" id="btn_delete" title="Delete">
+		<form action="process.php?new" id="form_new" method="post" style="display:block;">
+			<div>
+				<input type="text" name="name" id="form_new_name">
+				<input type="submit" value="Ok" id="form_new_submit">
+				<input type="reset" id="form_new_reset" value="Cancel">
+			</div>
+		</form>
+
+		<form action="process.php?rename" id="form_rename" method="post" style="block">
+			<div>
+				<input type="text" id="form_rename_name" name="name">
+				<input type="submit" id="form_rename_submit" value="Ok">
+				<input type="reset" value="Cancel" id="form_rename_reset">
+			</div>
+		</form>
+
+		<form action="upload.php" id="form_upload" enctype="multipart/form-data" method="post" style="block">
+			<div>
+				<input type="file" id="form_upload_name" name="file">
+				<input type="hidden" name="directory" id="form_upload_directory" value="">
+				<input type="submit" id="form_upload_submit" value="Ok">
+				<input type="reset" value="Cancel" id="form_upload_reset">
+			</div>
+		</form>
+
+		<iframe name="my_iframe" src="" frameborder="0" id="my_iframe" style="display:block"></iframe>
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时提交表单</title>
+
+	<script>
+		window.onload = function(){
+		
+		setTimeout(dosubmit, 9000);
+		}
+
+
+		function dosubmit(){
+			document.form1.submit();
+		}
+		
+
+	</script>
+</head>
+<body>
+	<form action="doPost.php" method="post" name="form1">
+		username: <input type="text" name="username">
+		<input type="submit" value="Submit" name="sub">	
+	</form>
+</body>
+</html>
