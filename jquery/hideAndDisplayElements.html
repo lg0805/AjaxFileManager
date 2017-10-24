@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隐藏和显示元素</title>
+	<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('p').eq(1).hide();
+
+			$('a.more').click(function(event){
+				event.preventDefault();//阻止链接的默认操作
+				$('p').eq(1).show('slow');// 显示速度，如：fast或数值
+				$(this).hide();
+			})
+		});
+	</script>
+</head>
+<body>
+	
+	<div id="switcher">
+		<div class="label">Text size</div>
+		<button id="switcher-default">Default</button>
+		<button id="switcher-large">Bigger</button>
+		<button id="switcher-small">Smaller</button>
+	</div>
+
+	<div id="speech">
+		<p>
+			Foursocre and seven years ago our fathers brouth forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equral.
+		</p>
+
+		<a href="#" class="more">read more</a>
+
+
+		<p>
+			You own the content you post on GitHub. However, you have some responsibilities regarding it, and we ask you to grant us some rights so we can provide services to you.
+		</p>
+	</div>
+</body>
+</html>
